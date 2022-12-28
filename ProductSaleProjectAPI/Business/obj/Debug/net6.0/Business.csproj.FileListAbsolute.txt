@@ -15,3 +15,22 @@ C:\Users\Bruker\OneDrive\Desktop\C#\ProductSaleProjectAPI\Business\obj\Debug\net
 C:\Users\Bruker\OneDrive\Desktop\C#\ProductSaleProjectAPI\Business\obj\Debug\net6.0\refint\Business.dll
 C:\Users\Bruker\OneDrive\Desktop\C#\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.pdb
 C:\Users\Bruker\OneDrive\Desktop\C#\ProductSaleProjectAPI\Business\obj\Debug\net6.0\ref\Business.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Business.deps.json
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Business.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Business.pdb
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Entities.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Entities.pdb
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.csproj.AssemblyReference.cache
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.AssemblyInfoInputs.cache
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.AssemblyInfo.cs
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.csproj.CopyComplete
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\refint\Business.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\Business.pdb
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\obj\Debug\net6.0\ref\Business.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Core.dll
+C:\Users\Bruker\OneDrive\Desktop\C#-Angular Projects\ProductSaleProject\ProductSaleProject\ProductSaleProjectAPI\Business\bin\Debug\net6.0\Core.pdb
