@@ -1,9 +1,13 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +18,21 @@ namespace Business.Concrete
 {
     public class ProductManager : IProductService
     {
+        //Validation Codes: is related to data structure like the length of product name or minimum price.
+        //FluentValidation is a .NET library for building strongly-typed validation rules. It Uses a fluent interface and lambda expressions for building validation rules. 
+        
         IProductDal _productDal;
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
         }
 
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            if(product.ProductName.Length < 2)
-            {
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
+            //ValidationTool.Validate(new ProductValidator(), product); //instead of this we use AOP
+            
+            //Business Code
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
         }
