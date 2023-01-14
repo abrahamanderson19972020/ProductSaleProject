@@ -9,7 +9,7 @@ using Entities.DTOs;
 ProductTest();
 Console.WriteLine("------------------category Dal ile---------------------------");
 
-CategoryTest();
+//CategoryTest();
 
 static void ProductTest()
 {
@@ -30,13 +30,13 @@ static void ProductTest()
     }
 }
 
-static void CategoryTest()
-{
-    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-    foreach (Category category in categoryManager.GetAllCategories())
-    {
-        Console.WriteLine(category.CategoryName);
-    }
-    Console.WriteLine("-------single category --------");
-    Console.WriteLine(categoryManager.GetCategoryById(1).CategoryName);
-}
+//static void CategoryTest()
+//{
+//    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+//    foreach (Category category in categoryManager.GetAllCategories())
+//    {
+//        Console.WriteLine(category.CategoryName);
+//    }
+//    Console.WriteLine("-------single category --------");
+//    Console.WriteLine(categoryManager.GetCategoryById(1).CategoryName);
+//}

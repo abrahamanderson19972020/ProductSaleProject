@@ -1,8 +1,11 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.BusinessRules;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -22,26 +25,40 @@ namespace Business.Concrete
         //FluentValidation is a .NET library for building strongly-typed validation rules. It Uses a fluent interface and lambda expressions for building validation rules. 
         
         IProductDal _productDal;
+        ICategoryDal _categoryDal;
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
         }
 
+        //Claim
+        [SecuredOperation("prodcut.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
         {
             //ValidationTool.Validate(new ProductValidator(), product); //instead of this we use AOP
-            
+
             //Business Code
-            _productDal.Add(product);
+            IResult result = BusinessRules.Run(CheckIfProductWithSameName(product), CheckNumberOfProductByCategory(product));
+            if(result !=null)
+            {
+                return result;
+            }
+            
+                _productDal.Add(product);
+
             return new SuccessResult(Messages.ProductAdded);
         }
+
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
             _productDal.Update(product);
             return new SuccessResult(Messages.ProductUpdated);
         }
 
+        [CacheRemoveAspect("IProductService.Get")]
         public IResult Delete(Product product)
         {
             _productDal.Delete(product);
@@ -58,6 +75,7 @@ namespace Business.Concrete
             return new DataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max),true,Messages.GetAllByProductPrice); 
         }
 
+        [CacheAspect]
         public IDataResult<List<Product>> GetAllProducts()
         {
             return new DataResult<List<Product>>(_productDal.GetAll(),true,Messages.ProductAllListed);
@@ -71,6 +89,24 @@ namespace Business.Concrete
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
             return new DataResult<List<ProductDetailDto>>(_productDal.GetProductDetails(), true, Messages.ProductDetails) ;
+        }
+
+        //Business Rules
+        private IResult CheckNumberOfProductByCategory(Product product)
+        {
+            if (_productDal.GetAll(p => p.CategoryId == product.CategoryId).Count > 10)
+            {
+                return new ErrorResult(Messages.ProductNumberByCategoryExceeded);
+            }
+            return new SuccessResult();
+        }
+        private IResult CheckIfProductWithSameName(Product product)
+        {
+            if (_productDal.GetAll(p => p.ProductName == product.ProductName).Any())
+            {
+                return new ErrorResult(Messages.ProductAlreadyExists);
+            }
+            return new SuccessResult();
         }
     }
 }
